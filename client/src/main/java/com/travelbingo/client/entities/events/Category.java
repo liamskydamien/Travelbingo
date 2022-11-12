@@ -8,24 +8,17 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Location {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
-            name = "country_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "FK_COUNTRY_CODE"))
-    private Country country;
-
     @Column
-    private String coordinates;
+    private String name;
 
     @Column
     private String description;
