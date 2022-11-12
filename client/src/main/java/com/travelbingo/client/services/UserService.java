@@ -79,7 +79,7 @@ public class UserService    {
     }
 
     public User findUserByEmail(String email) {
-        return userRepository.findByEmail(email);
+        return userRepository.findByUserEmail(email);
     }
 
     public void createPasswordResetTokenForUser(User user, String token) {
