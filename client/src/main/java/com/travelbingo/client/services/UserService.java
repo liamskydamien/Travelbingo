@@ -32,11 +32,11 @@ public class UserService    {
 
     public User registerUser(UserModel userModel) {
         User user = new User();
-        user.setUserEmail(userModel.getEmail());
-        user.setUserFirstName(userModel.getFirstName());
-        user.setUserLastname(userModel.getLastName());
-        user.setUserRole("USER");
-        user.setUserPassword(passwordEncoder.encode(userModel.getPassword()));
+        user.setEMail(userModel.getEmail());
+        user.setFirstName(userModel.getFirstName());
+        user.setLastName(userModel.getLastName());
+        user.setUserrole("USER");
+        user.setPassword(passwordEncoder.encode(userModel.getPassword()));
 
         userRepository.save(user);
         return user;
@@ -79,7 +79,7 @@ public class UserService    {
     }
 
     public User findUserByEmail(String email) {
-        return userRepository.findByUserEmail(email);
+        return userRepository.findUserByEMail(email);
     }
 
     public void createPasswordResetTokenForUser(User user, String token) {
@@ -112,11 +112,11 @@ public class UserService    {
     }
 
     public void changePassword(User user, String newPassword) {
-        user.setUserPassword(passwordEncoder.encode(newPassword));
+        user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
     }
 
     public boolean checkIfValidOldPassword(User user, String oldPassword) {
-        return passwordEncoder.matches(oldPassword, user.getUserPassword());
+        return passwordEncoder.matches(oldPassword, user.getPassword());
     }
 }
