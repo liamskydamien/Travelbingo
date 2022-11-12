@@ -1,7 +1,7 @@
 package com.travelbingo.client.controllers;
 
-import com.travelbingo.client.entities.User;
-import com.travelbingo.client.entities.VerificationToken;
+import com.travelbingo.client.entities.user.User;
+import com.travelbingo.client.entities.user.VerificationToken;
 import com.travelbingo.client.events.RegistrationCompleteEvent;
 import com.travelbingo.client.models.PasswordModel;
 import com.travelbingo.client.models.UserModel;

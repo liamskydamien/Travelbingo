@@ -1,6 +1,6 @@
 package com.travelbingo.client.events.listener;
 
-import com.travelbingo.client.entities.User;
+import com.travelbingo.client.entities.user.User;
 import com.travelbingo.client.events.RegistrationCompleteEvent;
 import com.travelbingo.client.services.UserService;
 import lombok.extern.slf4j.Slf4j;

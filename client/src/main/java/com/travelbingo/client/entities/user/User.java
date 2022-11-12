@@ -1,4 +1,4 @@
-package com.travelbingo.client.entities;
+package com.travelbingo.client.entities.user;
 
 import lombok.*;
 import javax.persistence.*;
