@@ -1,8 +1,8 @@
 package com.travelbingo.client.services;
 
-import com.travelbingo.client.entities.PasswordResetToken;
-import com.travelbingo.client.entities.User;
-import com.travelbingo.client.entities.VerificationToken;
+import com.travelbingo.client.entities.user.PasswordResetToken;
+import com.travelbingo.client.entities.user.User;
+import com.travelbingo.client.entities.user.VerificationToken;
 import com.travelbingo.client.models.UserModel;
 import com.travelbingo.client.repositories.PasswordResetTokenRepository;
 import com.travelbingo.client.repositories.UserRepository;

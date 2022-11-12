@@ -1,6 +1,6 @@
 package com.travelbingo.client.events;
 
-import com.travelbingo.client.entities.User;
+import com.travelbingo.client.entities.user.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.context.ApplicationEvent;

@@ -1,6 +1,6 @@
 package com.travelbingo.client.repositories;
 
-import com.travelbingo.client.entities.PasswordResetToken;
+import com.travelbingo.client.entities.user.PasswordResetToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
