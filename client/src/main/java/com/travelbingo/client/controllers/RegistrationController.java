@@ -1,5 +1,11 @@
 package com.travelbingo.client.controllers;
 
+import com.travelbingo.client.entities.User;
+import com.travelbingo.client.entities.VerificationToken;
+import com.travelbingo.client.events.RegistrationCompleteEvent;
+import com.travelbingo.client.models.PasswordModel;
+import com.travelbingo.client.models.UserModel;
+import com.travelbingo.client.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -40,10 +46,8 @@ public class RegistrationController {
 
 
     @GetMapping("/resendVerifyToken")
-    public String resendVerificationToken(@RequestParam("token") String oldToken,
-                                          HttpServletRequest request) {
-        VerificationToken verificationToken
-                = userService.generateNewVerificationToken(oldToken);
+    public String resendVerificationToken(@RequestParam("token") String oldToken, HttpServletRequest request) {
+        VerificationToken verificationToken = userService.generateNewVerificationToken(oldToken);
         User user = verificationToken.getUser();
         resendVerificationTokenMail(user, applicationUrl(request), verificationToken);
         return "Verification Link Sent";

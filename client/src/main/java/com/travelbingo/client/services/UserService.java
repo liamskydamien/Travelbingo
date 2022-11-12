@@ -1,7 +1,12 @@
 package com.travelbingo.client.services;
 
+import com.travelbingo.client.entities.PasswordResetToken;
 import com.travelbingo.client.entities.User;
+import com.travelbingo.client.entities.VerificationToken;
+import com.travelbingo.client.models.UserModel;
+import com.travelbingo.client.repositories.PasswordResetTokenRepository;
 import com.travelbingo.client.repositories.UserRepository;
+import com.travelbingo.client.repositories.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,19 +32,18 @@ public class UserService    {
 
     public User registerUser(UserModel userModel) {
         User user = new User();
-        user.setEmail(userModel.getEmail());
-        user.setFirstName(userModel.getFirstName());
-        user.setLastName(userModel.getLastName());
-        user.setRole("USER");
-        user.setPassword(passwordEncoder.encode(userModel.getPassword()));
+        user.setUserEmail(userModel.getEmail());
+        user.setUserFirstName(userModel.getFirstName());
+        user.setUserLastname(userModel.getLastName());
+        user.setUserRole("USER");
+        user.setUserPassword(passwordEncoder.encode(userModel.getPassword()));
 
         userRepository.save(user);
         return user;
     }
 
     public void saveVerificationTokenForUser(String token, User user) {
-        VerificationToken verificationToken
-                = new VerificationToken(user, token);
+        VerificationToken verificationToken = new VerificationToken(user, token);
 
         verificationTokenRepository.save(verificationToken);
     }
@@ -79,8 +83,7 @@ public class UserService    {
     }
 
     public void createPasswordResetTokenForUser(User user, String token) {
-        PasswordResetToken passwordResetToken
-                = new PasswordResetToken(user,token);
+        PasswordResetToken passwordResetToken = new PasswordResetToken(user,token);
         passwordResetTokenRepository.save(passwordResetToken);
     }
 
@@ -109,11 +112,11 @@ public class UserService    {
     }
 
     public void changePassword(User user, String newPassword) {
-        user.setPassword(passwordEncoder.encode(newPassword));
+        user.setUserPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
     }
 
     public boolean checkIfValidOldPassword(User user, String oldPassword) {
-        return passwordEncoder.matches(oldPassword, user.getPassword());
+        return passwordEncoder.matches(oldPassword, user.getUserPassword());
     }
 }
