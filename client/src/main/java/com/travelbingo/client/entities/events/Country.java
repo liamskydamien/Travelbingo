@@ -1,15 +1,12 @@
 package com.travelbingo.client.entities.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 public class Country {
@@ -19,4 +16,8 @@ public class Country {
 
     @Column
     String name;
+
+    public Country(String name) {
+        this.name = name;
+    }
 }

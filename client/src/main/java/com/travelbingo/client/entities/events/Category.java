@@ -1,9 +1,6 @@
 package com.travelbingo.client.entities.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,7 +8,7 @@ import javax.persistence.*;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,4 +19,9 @@ public class Category {
 
     @Column
     private String description;
+
+    public Category(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

@@ -1,4 +1,4 @@
-package com.travelbingo.client.repositories;
+package com.travelbingo.client.repositories.user;
 
 import com.travelbingo.client.entities.user.VerificationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
