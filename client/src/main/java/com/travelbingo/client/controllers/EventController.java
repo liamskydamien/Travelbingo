@@ -8,13 +8,10 @@ import com.travelbingo.client.services.CategoryService;
 import com.travelbingo.client.services.EventService;
 import com.travelbingo.client.services.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/api/events")
+@RequestMapping(path = "/events")
 public class EventController {
     @Autowired
     private LocationService locationService;
@@ -24,7 +21,7 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-    @GetMapping(name = "/add")
+    @PostMapping(path = "/add")
     public String addEvent(@RequestBody EventModel event){
         Location location = locationService.addLocation(event.getLocation());
         Category category = categoryService.addCategory(event.getCategory());

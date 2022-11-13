@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +29,7 @@ public class Location {
     @Column
     private String name;
 
-    public Location(Country country, String coordinates, String description, String name) {
+    public Location(Country country, String name, String description, String coordinates) {
         this.country = country;
         this.coordinates = coordinates;
         this.description = description;

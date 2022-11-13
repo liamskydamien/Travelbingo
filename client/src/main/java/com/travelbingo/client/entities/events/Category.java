@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Setter
 @Getter
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Getter
 @Setter
 public class Country {
