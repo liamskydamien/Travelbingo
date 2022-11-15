@@ -6,11 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class CategoryModel implements BingoModel {
+@NoArgsConstructor
+@AllArgsConstructor
+public class FindEventModel implements BingoModel {
     private String name;
-    private String description;
+    private String locationName;
+    private String categoryName;
+    private String countryName;
 }
