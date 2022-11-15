@@ -5,18 +5,22 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
-@Getter
 @Setter
-public class Country {
+@Getter
+@NoArgsConstructor
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    String name;
+    private String name;
 
-    public Country(String name) {
+    @Column
+    private String description;
+
+    public Category(String name, String description) {
         this.name = name;
+        this.description = description;
     }
 }
