@@ -55,7 +55,7 @@ public class LocationService implements ServiceInterface<Location> {
     }
 
     @Override
-    public List<Location> getAll(BingoModel model) {
-        return null;
+    public List<Location> getAll() {
+        return locationRepository.findAll();
     }
 }

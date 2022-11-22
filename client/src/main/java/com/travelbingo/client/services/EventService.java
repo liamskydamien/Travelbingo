@@ -47,7 +47,7 @@ public class EventService implements ServiceInterface<Event> {
     }
 
     @Override
-    public List<Event> getAll(BingoModel model) {
-        return null;
+    public List<Event> getAll() {
+        return eventRepository.findAll();
     }
 }

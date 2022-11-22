@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Bingo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +18,8 @@ public class Bingo {
 
     @Column
     private String name;
+
+    public Bingo(String name) {
+        this.name = name;
+    }
 }

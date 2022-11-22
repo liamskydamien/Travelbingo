@@ -30,16 +30,16 @@ public class CategoryService implements ServiceInterface<Category> {
 
     @Override
     public Category findByName(String name) {
-        return null;
+        return categoryRepository.findCategoryByName(name).orElseThrow();
     }
 
     @Override
     public Category findById(Long id) {
-        return null;
+        return categoryRepository.findById(id).orElseThrow();
     }
 
     @Override
-    public List<Category> getAll(BingoModel model) {
-        return null;
+    public List<Category> getAll() {
+        return categoryRepository.findAll();
     }
 }

@@ -7,5 +7,5 @@ import java.util.List;
 public interface ServiceInterface<T> {
     T findByName(String name);
     T findById(Long id);
-    List<T> getAll(BingoModel model);
+    List<T> getAll();
 }

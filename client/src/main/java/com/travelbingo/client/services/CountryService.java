@@ -23,8 +23,8 @@ public class CountryService implements ServiceInterface<Country> {
     }
 
     @Override
-    public List<Country> getAll(BingoModel model) {
-        return null;
+    public List<Country> getAll() {
+        return countryRepository.findAll();
     }
 
 }

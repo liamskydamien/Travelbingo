@@ -4,7 +4,6 @@ import com.travelbingo.client.entities.events.Bingo;
 import com.travelbingo.client.entities.user.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,7 +11,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
 @NoArgsConstructor
 public class UserBingo {
     @Id
@@ -32,4 +30,9 @@ public class UserBingo {
             nullable = false,
             foreignKey = @ForeignKey(name = "FK_USER_CODE"))
     private User user;
+
+    public UserBingo(Bingo bingo, User user) {
+        this.bingo = bingo;
+        this.user = user;
+    }
 }

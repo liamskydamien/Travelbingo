@@ -36,8 +36,8 @@ public class EventController {
     }
 
     @GetMapping(path = "/get")
-    public List<Event> getEvents(@RequestBody FindEventModel findEventModel){
-        return eventService.getAll(findEventModel);
+    public List<Event> getEvents(){
+        return eventService.getAll();
     }
 
 
