@@ -23,7 +23,7 @@ public class EventService implements ServiceInterface<Event> {
 
     @Override
     public Event findByName(String name) {
-        return null;
+        return eventRepository.findEventByName(name).orElseThrow();
     }
 
     @Override

@@ -22,9 +22,6 @@ public class EventController {
     private LocationService locationService;
 
     @Autowired
-    private CountryService countryService;
-
-    @Autowired
     private CategoryService categoryService;
     @Autowired
     private EventService eventService;
@@ -40,8 +37,8 @@ public class EventController {
 
     @GetMapping(path = "/get")
     public List<Event> getEvents(@RequestBody FindEventModel findEventModel){
-        Location eventLocation = locationService.findByName(findEventModel.getLocationName());
-        Country eventCountry = countryService.findByName(findEventModel.getCountryName());
         return eventService.getAll(findEventModel);
     }
+
+
 }
