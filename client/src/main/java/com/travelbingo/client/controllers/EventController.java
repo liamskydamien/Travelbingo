@@ -1,13 +1,10 @@
 package com.travelbingo.client.controllers;
 
 import com.travelbingo.client.entities.events.Category;
-import com.travelbingo.client.entities.events.Country;
 import com.travelbingo.client.entities.events.Event;
 import com.travelbingo.client.entities.events.Location;
 import com.travelbingo.client.models.EventModel;
-import com.travelbingo.client.models.FindEventModel;
 import com.travelbingo.client.services.CategoryService;
-import com.travelbingo.client.services.CountryService;
 import com.travelbingo.client.services.EventService;
 import com.travelbingo.client.services.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +32,7 @@ public class EventController {
         return "Success";
     }
 
-    @GetMapping(path = "/get")
+    @GetMapping(path = "/getAll")
     public List<Event> getEvents(){
         return eventService.getAll();
     }
