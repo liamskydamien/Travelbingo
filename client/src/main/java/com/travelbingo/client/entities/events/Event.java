@@ -1,8 +1,10 @@
 package com.travelbingo.client.entities.events;
 
+import com.travelbingo.client.entities.bingo.BingoEvent;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -32,6 +34,9 @@ public class Event {
 
     @Column
     private String description;
+
+    @OneToMany(mappedBy = "event")
+    Set<BingoEvent> bingoEventSet;
 
     public Event(String name, Location location, Category category, String description) {
         this.name = name;

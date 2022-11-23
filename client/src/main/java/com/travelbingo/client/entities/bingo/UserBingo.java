@@ -13,26 +13,16 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class UserBingo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private UserBingoID userBingoID;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
-            name = "bingo_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "FK_Bingo_CODE"))
-    private Bingo bingo;
+    @ManyToOne
+    @MapsId("bingoID")
+    @JoinColumn(name = "bingo_id")
+    Bingo bingo;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
-            name = "user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "FK_USER_CODE"))
-    private User user;
-
-    public UserBingo(Bingo bingo, User user) {
-        this.bingo = bingo;
-        this.user = user;
-    }
+    @ManyToOne
+    @MapsId("userID")
+    @JoinColumn(name = "user_id")
+    User user;
 }

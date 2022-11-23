@@ -1,7 +1,10 @@
 package com.travelbingo.client.entities.user;
 
+import com.travelbingo.client.entities.bingo.BingoEvent;
+import com.travelbingo.client.entities.bingo.UserBingo;
 import lombok.*;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name = "Users")
 @Getter
@@ -24,5 +27,8 @@ public class User {
     private String userrole;
     @Column
     private boolean enabled =false;
+
+    @OneToMany(mappedBy = "user")
+    Set<UserBingo> userBingoSetSet;
 
 }
