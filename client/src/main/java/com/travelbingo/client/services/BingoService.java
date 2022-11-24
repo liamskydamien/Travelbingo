@@ -13,6 +13,4 @@ public class BingoService {
         this.bingoRepository = bingoRepository;
         this.bingoEventRepository = bingoEventRepository;
     }
-
-    public void addNew
 }
