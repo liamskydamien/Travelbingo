@@ -1,4 +1,4 @@
-package com.travelbingo.client.repositories;
+package com.travelbingo.client.repositories.bingo;
 
 import com.travelbingo.client.entities.bingo.BingoEvent;
 import com.travelbingo.client.entities.events.Bingo;
@@ -17,4 +17,7 @@ public interface BingoEventRepository extends JpaRepository<BingoEvent, Long> {
 
     @Query("SELECT u.bingo from BingoEvent u where u.event = :search")
     public List<Bingo> getBingoByEvent(@Param("search") Event event);
+
+    public boolean existsBingoEventByBingoAndEvent(Bingo bingo, Event event);
+    public int countBingoEventByEventAndBingo(Event event, Bingo bingo);
 }

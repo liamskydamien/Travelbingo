@@ -1,4 +1,4 @@
-package com.travelbingo.client.repositories;
+package com.travelbingo.client.repositories.bingo;
 
 import com.travelbingo.client.entities.events.Bingo;
 import org.springframework.data.jpa.repository.JpaRepository;
